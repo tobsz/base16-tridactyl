@@ -1,4 +1,4 @@
-:root {    /* Gruvbox-light-soft by Chris Kempson (http://chriskempson.com) */
+:root {
     --base00: #f2e5bc;
     --base01: #ebdbb2;
     --base02: #d5c4a1;
@@ -16,6 +16,9 @@
     --base0E: #8f3f71;
     --base0F: #d65d0e;
 
+    --base10: #fabd2f;
+    --base11: #32302f;
+
     --tridactyl-fg: var(--base05);
     --tridactyl-bg: var(--base00);
     --tridactyl-url-fg: var(--base08);
@@ -24,8 +27,8 @@
     --tridactyl-highlight-box-fg: var(--base00);
 
     /* Hint character tags */
-    --tridactyl-hintspan-fg: var(--base00) !important;
-    --tridactyl-hintspan-bg: var(--base0A) !important;
+    --tridactyl-hintspan-fg: var(--base11) !important;
+    --tridactyl-hintspan-bg: var(--base10) !important;
 
     /* Element Highlights */
     --tridactyl-hint-active-fg: none;
@@ -35,12 +38,27 @@
     --tridactyl-hint-outline: none;
 }
 
-#command-line-holder {    order: 1;
-    border: 2px solid var(--base0B);
+#cmdline_iframe {
+    bottom: unset;
+    top: 25% !important;
+    left: 15% !important;
+    z-index: 2147483647 !important;
+    width: 70% !important;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px !important;
+}
+
+body {
+    top: 0px;
+}
+
+#command-line-holder {
+    order: 1;
+    border: 3px solid var(--base0D);
     color: var(--tridactyl-bg);
 }
 
-#tridactyl-input {    padding: 1rem;
+#tridactyl-input {
+    padding: 1rem;
     color: var(--tridactyl-fg);
     width: 90%;
     font-size: 1.5rem;
@@ -50,7 +68,8 @@
     padding: 1rem;
 }
 
-#completions table {    font-size: 0.8rem;
+#completions table {
+    font-size: 0.8rem;
     font-weight: 200;
     border-spacing: 0;
     table-layout: fixed;
@@ -59,13 +78,13 @@
     padding-bottom: 1rem;
 }
 
-#completions > div {    max-height: calc(20 * var(--option-height));
+#completions>div {
+    max-height: calc(20 * var(--option-height));
     min-height: calc(10 * var(--option-height));
 }
 
-/* COMPLETIONS */
-
-#completions {    --option-height: 1.4em;
+#completions {
+    --option-height: 1.4em;
     color: var(--tridactyl-fg);
     background: var(--tridactyl-bg);
     display: inline-block;
@@ -77,46 +96,49 @@
     order: 2;
 }
 
-/* Olie doesn't know how CSS inheritance works */
-#completions .HistoryCompletionSource {    max-height: unset;
+#completions .HistoryCompletionSource {
+    max-height: unset;
     min-height: unset;
 }
 
-    #completions
-    .HistoryCompletionSource
-    table {
+#completions .HistoryCompletionSource table {
     width: 100%;
     font-size: 9pt;
     border-spacing: 0;
     table-layout: fixed;
 }
 
-/* redundancy 2: redundancy 2: more redundancy */
-#completions .BmarkCompletionSource {    max-height: unset;
+#completions .BmarkCompletionSource {
+    max-height: unset;
     min-height: unset;
 }
 
-#completions table tr td.prefix,#completions table tr td.privatewindow,#completions table tr td.container,#completions table tr td.icon {    display: none;
+#completions table tr td.prefix,
+#completions table tr td.privatewindow,
+#completions table tr td.container,
+#completions table tr td.icon {
+    display: none;
 }
 
-    #completions
-    .BufferCompletionSource
-    table {
+#completions .BufferCompletionSource table {
     width: unset;
     font-size: unset;
     border-spacing: unset;
     table-layout: unset;
 }
 
-#completions table tr .title {    width: 50%;
+#completions table tr .title {
+    width: 50%;
 }
 
-#completions table tr {    white-space: nowrap;
+#completions table tr {
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#completions .sectionHeader {    background: unset;
+#completions .sectionHeader {
+    background: unset;
     font-weight: 200;
     border-bottom: unset;
     padding: 1rem !important;
@@ -124,36 +146,25 @@
     padding-bottom: 0.2rem;
 }
 
-#cmdline_iframe {    position: fixed !important;
-    bottom: unset;
-    top: 25% !important;
-    left: 10% !important;
-    z-index: 2147483647 !important;
-    width: 80% !important;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px !important;
-}
-
-.TridactylStatusIndicator {    position: fixed !important;
+.TridactylStatusIndicator {
+    position: fixed !important;
     bottom: 0 !important;
     background: var(--tridactyl-bg) !important;
     border: unset !important;
-    border: 1px var(--base0B) solid !important;
-    font-size: 12pt !important;
-    /*font-weight: 200 !important;*/
-    padding: 0.8ex !important;
+    border: 1px var(--base0D) solid !important;
+    font-size: 9pt !important;
 }
 
-#completions .focused {    background: var(--base0B);
+.TridactylHint {
+    font-family: monospace !important;
+}
+
+#completions .focused {
+    background: var(--base0D);
     color: var(--base00);
 }
 
-#completions .focused .url {    background: var(--base0B);
+#completions .focused .url {
+    background: var(--base0D);
     color: var(--base00);
 }
-/* #Ocean-normal { */
-/*  border-color: green !important; */
-/* } */
-
-/* #Ocean-insert { */
-/*  border-color: yellow !important; */
-/* } */
