@@ -106,6 +106,7 @@ body {
     font-size: 9pt;
     border-spacing: 0;
     table-layout: fixed;
+    text-overflow: ellipsis;
 }
 
 #completions .BmarkCompletionSource {
@@ -121,10 +122,16 @@ body {
 }
 
 #completions .BufferCompletionSource table {
-    width: unset;
-    font-size: unset;
-    border-spacing: unset;
-    table-layout: unset;
+    width: 100%;
+    font-size: 0.8rem;
+    border-spacing: 0;
+    table-layout: fixed;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#completions table {
+    padding: 0 0.8rem 0.8rem;
 }
 
 #completions table tr .title {
@@ -137,25 +144,31 @@ body {
     text-overflow: ellipsis;
 }
 
+td,
+th {
+    border-right: 0.8rem solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #completions .sectionHeader {
     background: unset;
     font-weight: 200;
     border-bottom: unset;
-    padding: 1rem !important;
-    padding-left: unset;
-    padding-bottom: 0.2rem;
+    padding: 0.7rem 1rem 0.5rem !important;
 }
 
-.TridactylStatusIndicator {
-    position: fixed !important;
-    bottom: 0 !important;
-    background: var(--tridactyl-bg) !important;
-    border: unset !important;
-    border: 1px var(--base0D) solid !important;
+span.TridactylStatusIndicator {
+    position: fixed;
+    bottom: 0;
+    background: var(--tridactyl-bg);
+    border: unset;
+    border: 1px var(--base0D) solid;
     font-size: 9pt !important;
 }
 
-.TridactylHint {
+span.TridactylHint {
     font-family: monospace !important;
 }
 
