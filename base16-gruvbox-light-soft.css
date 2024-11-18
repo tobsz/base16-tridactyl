@@ -183,4 +183,5 @@ span.TridactylStatusIndicator {
 
 span.TridactylHint {
     font-family: monospace !important;
+    font-size: 10pt !important;
 }
